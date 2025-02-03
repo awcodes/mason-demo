@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1ad44840fe7504fe51008f1a5bc0f99",
+    "content-hash": "fb73a58991fae7967480deff57b919bb",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -142,6 +142,97 @@
                 }
             ],
             "time": "2024-05-24T18:47:38+00:00"
+        },
+        {
+            "name": "awcodes/mason",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "/Users/adam.weston/Dev/mason/mason",
+                "reference": "054579ce60a828a73d4c3055d9615958c0e2a0a1"
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "php": "^8.3",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^8.0",
+                "orchestra/testbench": "^9.0",
+                "pestphp/pest": "^2.1",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Awcodes\\Mason\\MasonServiceProvider"
+                    ],
+                    "aliases": {
+                        "Mason": "Awcodes\\Mason\\Facades\\Mason"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Awcodes\\Mason\\": "src/",
+                    "Awcodes\\Mason\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Awcodes\\Mason\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "@php ./vendor/bin/testbench package:discover --ansi"
+                ],
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "test-coverage": [
+                    "vendor/bin/pest --coverage"
+                ],
+                "format": [
+                    "vendor/bin/pint"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Weston",
+                    "email": "awcodes1@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TODO make a description",
+            "homepage": "https://github.com/awcodes/mason",
+            "keywords": [
+                "awcodes",
+                "filamentphp",
+                "laravel",
+                "mason"
+            ],
+            "support": {
+                "issues": "https://github.com/awcodes/mason/issues",
+                "source": "https://github.com/awcodes/mason"
+            },
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
