@@ -3,7 +3,9 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
+use App\Mason\NewsletterSignup;
 use App\Models\Post;
+use Awcodes\Mason\Mason;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -28,7 +30,13 @@ class PostResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->unique(ignoreRecord: true),
-                Forms\Components\MarkdownEditor::make('content')
+                Mason::make('content')
+                    ->placeholder('Drag and drop bricks to get started...')
+                    ->bricks([
+                        \App\Mason\Batman::make(),
+                        \App\Mason\NewsletterSignup::make(),
+                        \Awcodes\Mason\Actions\Section::make(),
+                    ])
                     ->columnSpanFull(),
             ]);
     }

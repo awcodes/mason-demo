@@ -15,11 +15,13 @@
             'resources/css/app/app.css',
         ])
 
+        <x-fonts />
+
         @livewireStyles
     </head>
     <body class="font-sans antialiased bg-gray-50 dark:bg-gray-900 dark:text-gray-50">
         <header class="bg-white dark:bg-gray-950 border-b-4 border-primary-500">
-            <div class="max-w-7xl mx-auto py-3 px-6 flex items-center justify-between">
+            <div class="max-w-5xl mx-auto py-3 px-6 flex items-center justify-between">
                 <a href="{{ route('welcome') }}" class="text-2xl font-bold">{{ config('app.name') }}</a>
                 <div class="flex items-center gap-4">
                     <a href="/admin/login">Login</a>
@@ -27,7 +29,7 @@
                 </div>
             </div>
         </header>
-        <main class="max-w-7xl mx-auto p-6">
+        <main>
             {{ $slot }}
         </main>
         <footer>

@@ -3,7 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-use Illuminate\View\View;
+
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class ShowPost extends Component

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected function casts(): array
+    {
+        return [
+            'content' => 'array',
+        ];
+    }
 }
