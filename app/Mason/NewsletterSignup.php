@@ -5,7 +5,7 @@ namespace App\Mason;
 use Awcodes\Mason\Brick;
 use Awcodes\Mason\EditorCommand;
 use Awcodes\Mason\Mason;
-use Awcodes\Mason\Support\Helpers;
+use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
 
 class NewsletterSignup
@@ -18,9 +18,18 @@ class NewsletterSignup
             ->icon('heroicon-o-newspaper')
             ->slideOver()
             ->fillForm(fn (array $arguments): array => [
+                'background_color' => $arguments['background_color'] ?? 'primary',
                 'heading' => $arguments['heading'] ?? 'Want product news and updates? Sign up for our newsletter.',
             ])
             ->form([
+                Radio::make('background_color')
+                    ->options([
+                        'white' => 'White',
+                        'gray' => 'Gray',
+                        'primary' => 'Primary',
+                    ])
+                    ->inline()
+                    ->inlineLabel(false),
                 TextInput::make('heading')
                     ->label('Heading')
                     ->required(),

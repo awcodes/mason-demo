@@ -35,17 +35,19 @@ class Cards
                     ->inlineLabel(false),
                 Repeater::make('cards')
                     ->label('Cards')
+                    ->collapsible()
+                    ->itemLabel(fn (array $state): ?string => $state['heading'] ?? null)
                     ->schema([
                         TextInput::make('heading')
                             ->label('Heading')
+                            ->live(onBlur: true)
                             ->columnSpanFull(),
                         RichEditor::make('body')
                             ->columnSpanFull()
                             ->required(),
                         RichEditor::make('footer')
                             ->columnSpanFull(),
-                    ])
-                    ->columns(),
+                    ]),
             ])
             ->action(function (array $arguments, array $data, Mason $component) {
                 $component->runCommands(

@@ -9,6 +9,8 @@ use Livewire\Component;
 #[Isolate]
 class NewsletterSignup extends Component
 {
+    public string $backgroundColor = 'primary';
+
     public string $heading;
 
     public string $email;

@@ -13,6 +13,7 @@ class BrickCollection
             NewsletterSignup::make(),
             Section::make(),
             Cards::make(),
+            SupportCenter::make(),
         ];
     }
 }

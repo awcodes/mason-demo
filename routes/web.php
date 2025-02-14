@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', [
-        'post' => Post::where('slug', 'test-post')->sole(),
+        'post' => Post::query()->first(),
     ]);
 })->name('welcome');
 

@@ -15,7 +15,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: colors.lime,
+                primary: colors.indigo,
             },
             fontFamily: {
                 display: ['Ubuntu', ...tailwindTheme.fontFamily.sans],
