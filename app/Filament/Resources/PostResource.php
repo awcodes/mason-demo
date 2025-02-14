@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Mason\BrickCollection;
-use App\Mason\NewsletterSignup;
 use App\Models\Post;
 use Awcodes\Mason\Mason;
 use Filament\Forms;

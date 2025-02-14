@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
