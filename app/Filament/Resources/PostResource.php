@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
+use App\Mason\BrickCollection;
 use App\Mason\NewsletterSignup;
 use App\Models\Post;
 use Awcodes\Mason\Mason;
@@ -32,11 +33,7 @@ class PostResource extends Resource
                     ->unique(ignoreRecord: true),
                 Mason::make('content')
                     ->placeholder('Drag and drop bricks to get started...')
-                    ->bricks([
-                        \App\Mason\Batman::make(),
-                        \App\Mason\NewsletterSignup::make(),
-                        \Awcodes\Mason\Actions\Section::make(),
-                    ])
+                    ->bricks(BrickCollection::make())
                     ->columnSpanFull(),
             ]);
     }

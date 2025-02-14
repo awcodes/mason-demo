@@ -1,9 +1,5 @@
 <x-layouts.app>
     {!!
-        mason($post->content, [
-            \App\Mason\Batman::make(),
-            \App\Mason\NewsletterSignup::make(),
-            \Awcodes\Mason\Actions\Section::make(),
-        ])->toHtml()
+        mason($post->content, \App\Mason\BrickCollection::make())->toHtml()
     !!}
 </x-layouts.app>

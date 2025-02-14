@@ -2,7 +2,9 @@
 
 namespace App\Filament\Pages;
 
+use App\Mason\BrickCollection;
 use Awcodes\Mason\Mason;
+use Awcodes\Mason\Support\Faker;
 use Filament\Forms\Form;
 use Filament\Pages\Page;
 use JetBrains\PhpStorm\NoReturn;
@@ -18,7 +20,7 @@ class CustomPage extends Page
     public function mount(): void
     {
         $this->form->fill([
-            'content' => \Awcodes\Mason\Support\Faker::make()
+            'content' => Faker::make()
                 ->brick(
                     identifier: 'section',
                     path: 'mason::bricks.section',
@@ -46,10 +48,7 @@ class CustomPage extends Page
             ->schema([
                 Mason::make('content')
                     ->placeholder('Drag and drop bricks to get started...')
-                    ->bricks([
-                        \App\Mason\Batman::make(),
-                        \Awcodes\Mason\Actions\Section::make(),
-                    ]),
+                    ->bricks(BrickCollection::make()),
             ]);
     }
 
