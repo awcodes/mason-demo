@@ -4,7 +4,7 @@
 
 <div
     @class([
-        'branded px-6 @container',
+        'branded @container',
         match ($bgColor) {
             'primary' => 'bg-primary-300 text-white',
             'secondary' => 'bg-secondary-300 text-white',
