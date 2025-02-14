@@ -6,6 +6,7 @@
     "require": {
         "php": "^8.2",
         "awcodes/dimmer": "^1.1",
+        "awcodes/filament-curator": "^3.6",
         "awcodes/mason": "*",
         "filament/filament": "^3.2.136",
         "laravel/framework": "^11.41.3",
