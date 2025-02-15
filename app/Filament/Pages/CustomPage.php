@@ -3,8 +3,10 @@
 namespace App\Filament\Pages;
 
 use App\Mason\BrickCollection;
+use Awcodes\Mason\Enums\SidebarPosition;
 use Awcodes\Mason\Mason;
 use Awcodes\Mason\Support\Faker;
+use Filament\Actions\Action;
 use Filament\Forms\Form;
 use Filament\Pages\Page;
 use JetBrains\PhpStorm\NoReturn;
@@ -48,8 +50,23 @@ class CustomPage extends Page
             ->schema([
                 Mason::make('content')
                     ->placeholder('Drag and drop bricks to get started...')
+                    ->sidebarPosition(SidebarPosition::Start)
                     ->bricks(BrickCollection::make()),
             ]);
+    }
+
+    public function masonInModalAction(): Action
+    {
+        return Action::make('masonInModal')
+            ->label('Mason in Modal')
+            ->form([
+                Mason::make('content')
+                    ->placeholder('Drag and drop bricks to get started...')
+                    ->bricks(BrickCollection::make()),
+            ])
+            ->action(function (array $data): void {
+                dd($data);
+            });
     }
 
     #[NoReturn]

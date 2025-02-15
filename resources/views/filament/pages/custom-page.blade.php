@@ -1,4 +1,6 @@
 <x-filament-panels::page>
+    {{ $this->masonInModalAction() }}
+
     <form wire:submit="save">
         {{ $this->form }}
 
